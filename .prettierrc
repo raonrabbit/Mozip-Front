@@ -1,6 +1,6 @@
 {
   "endOfLine": "auto",
-  "singleQuote": true,
+  "singleQuote": false,
   "parser": "typescript",
   "semi": true,
   "useTabs": true,
