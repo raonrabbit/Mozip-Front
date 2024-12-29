@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-/* eslint-disable import/no-extraneous-dependencies */
 import { FcGoogle } from "react-icons/fc";
-/* eslint-enable import/no-extraneous-dependencies */
 
 export default function Home() {
 	return (
