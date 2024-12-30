@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 
-export default function Home() {
+export default function LoginHome() {
 	return (
 		<div className="flex items-center justify-center min-h-screen bg-gray-50 bg-[#FAF7FC]">
 			<div className="w-[1400px] h-[570px] bg-white rounded-[1.5rem] shadow-lg flex overflow-hidden">
