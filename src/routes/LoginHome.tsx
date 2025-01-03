@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 
 export default function LoginHome() {
 	return (
-		<div className="flex items-center justify-center min-h-screen bg-gray-50 bg-[#FAF7FC]">
+		<div className="flex items-center justify-center min-h-screen bg-background dark:bg-background-dark">
 			<div className="w-[1400px] h-[570px] bg-white rounded-[1.5rem] shadow-lg flex overflow-hidden">
 				{/* 왼쪽 영역: 동영상 */}
 				<div className="w-1/2 bg-purple-100 relative">
