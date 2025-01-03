@@ -16,6 +16,8 @@
     "import/no-extraneous-dependencies": "off",
     "quotes": ["error", "double"], // Enforce double quotes
     "@typescript-eslint/quotes": ["error", "double"], // For TypeScript-specific files
-    "prettier/prettier": ["error", { "singleQuote": false }] // Prettier integration
+    "prettier/prettier": ["error", { "singleQuote": false }], // Prettier integration
+    "no-param-reassign": "off",
+    "react/require-default-props": "off"
   }
 }
