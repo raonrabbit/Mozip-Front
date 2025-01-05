@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 
 export default function LoginHome() {
+	const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+	const REDIRECT_URI = `${process.env.REACT_APP_ORIGIN_URI}/login/google`;
+
 	return (
 		<div className="flex items-center justify-center min-h-screen bg-background dark:bg-background-dark">
 			<div className="w-[1400px] h-[570px] bg-white rounded-[1.5rem] shadow-lg flex overflow-hidden">
@@ -49,13 +52,13 @@ export default function LoginHome() {
 
 					{/* 구글 로그인 */}
 					<div className="mt-6">
-						<button
-							type="button"
+						<a
+							href={`https://accounts.google.com/o/oauth2/v2/auth?client_id=${GOOGLE_CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=profile%20email`}
 							className="w-full border border-gray-300 py-2 rounded-[0.75rem] flex items-center justify-center bg-[#F3F6F8] font-semibold"
 						>
 							<FcGoogle className="h-5 w-5 mr-2" />
 							Google로 로그인
-						</button>
+						</a>
 					</div>
 
 					{/* 회원가입 안내 */}
