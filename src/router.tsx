@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "./components/Root";
-import LoginHome from "./routes/LoginHome";
-import Home from "./routes/Home";
+import Root from "./routes/Root";
+import LoginHome from "./routes/Home/LoginHome";
+import Home from "./routes/Home/Home";
+import GoogleCallback from "./routes/Login/GoogleCallback";
 
 const router = createBrowserRouter([
 	{
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
 			{
 				path: "home",
 				element: <Home />,
+			},
+			{
+				path: "/login/google",
+				element: <GoogleCallback />,
 			},
 		],
 	},
