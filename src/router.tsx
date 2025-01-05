@@ -3,6 +3,7 @@ import Root from "./routes/Root";
 import LoginHome from "./routes/Home/LoginHome";
 import Home from "./routes/Home/Home";
 import GoogleCallback from "./routes/Login/GoogleCallback";
+import SignUp from "./routes/Login/SignUp";
 
 const router = createBrowserRouter([
 	{
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
 			{
 				path: "home",
 				element: <Home />,
+			},
+			{
+				path: "signup",
+				element: <SignUp />,
 			},
 			{
 				path: "/login/google",
