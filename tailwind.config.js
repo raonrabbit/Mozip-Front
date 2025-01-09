@@ -15,6 +15,15 @@ module.exports = {
 					DEFAULT: "#FAF7FC",
 					dark: "#1A202C",
 				},
+
+				header: {
+					DEFAULT: "#FAF8FB",
+					dark: "#1A1C2C",
+				},
+
+				shadow: {
+					DEFAULT: "rgba(62, 48, 130, 0.15)",
+				},
 			},
 		},
 	},
