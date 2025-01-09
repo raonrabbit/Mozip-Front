@@ -17,7 +17,7 @@ interface ErrorResponse {
 
 const googleLogin = async (code: string): Promise<LoginResponse> => {
 	try {
-		const response = await localAxios.post<LoginResponse>("login/google", { code });
+		const response = await localAxios.post<LoginResponse>("auth/login/google", { code });
 		return response.data;
 	} catch (error: unknown) {
 		const err = error as ErrorResponse;
