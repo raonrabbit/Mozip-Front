@@ -19,5 +19,6 @@ code {
 @layer base {
   *, ::before, ::after {
     @apply transition-colors duration-500;
+    @apply select-none;
   }
 }
