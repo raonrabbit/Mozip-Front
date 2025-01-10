@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import googleLogin from "../../api/auth";
-
-interface LoginResponse {
-	nickname: string;
-	imageUrl?: string; // Nullable
-}
+import { googleLoginAPI } from "../../api/auth";
+import { GoogleLoginResponse } from "../../interfaces/user/googleLogin";
 
 export default function GoogleCallback() {
 	const navigate = useNavigate();
@@ -20,17 +16,15 @@ export default function GoogleCallback() {
 				navigate("/");
 				return;
 			}
-
+			console.log("code:", code);
 			try {
 				// 구글 로그인 API 호출
-				const loginResponse: LoginResponse = await googleLogin(code);
-				const nickname = loginResponse?.nickname;
-				const imageUrl = loginResponse?.imageUrl;
-				console.log(nickname);
-				console.log(imageUrl);
-				if (!nickname) {
-					console.log("닉네임 정보 없음");
-					navigate("/login");
+				const loginResponse: GoogleLoginResponse = await googleLoginAPI(code);
+				const accessToken = loginResponse?.accessToken;
+				console.log(accessToken);
+				if (!accessToken) {
+					console.log("로그인 토큰 정보 없음");
+					navigate("/");
 					return;
 				}
 				// 성공 메시지
