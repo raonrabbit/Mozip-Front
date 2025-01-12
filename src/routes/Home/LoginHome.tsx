@@ -1,9 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { FcGoogle } from "react-icons/fc";
+import { authActions } from "../../store/authSlice";
 
 export default function LoginHome() {
 	const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
 	const REDIRECT_URI = `${process.env.REACT_APP_ORIGIN_URI}/login/google`;
+
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		dispatch(
+			authActions.login({
+				profileImg: null,
+				name: "홍길동",
+				email: "test@gmail.com",
+				role: "user",
+			}),
+		);
+		navigate("/home");
+	};
 
 	return (
 		<div className="flex items-center justify-center min-h-screen bg-background dark:bg-background-dark">
@@ -22,7 +39,7 @@ export default function LoginHome() {
 					<div className="text-xl font-semibold mb-8">로그인</div>
 
 					{/* 이메일 / 비밀번호 폼 */}
-					<form className="space-y-4">
+					<form className="space-y-4" onSubmit={handleSubmit}>
 						<div>
 							<label htmlFor="email" className="block mb-1 text-sm font-medium">
 								이메일
