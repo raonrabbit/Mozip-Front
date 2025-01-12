@@ -4,6 +4,7 @@ import LoginHome from "./routes/Home/LoginHome";
 import Home from "./routes/Home/Home";
 import GoogleCallback from "./routes/Login/GoogleCallback";
 import SignUp from "./routes/Login/SignUp";
+import Group from "./routes/Group";
 
 const router = createBrowserRouter([
 	{
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
 			{
 				path: "/login/google",
 				element: <GoogleCallback />,
+			},
+			{
+				path: "group",
+				element: <Group />,
 			},
 		],
 	},
