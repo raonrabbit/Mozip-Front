@@ -20,7 +20,17 @@
     "no-param-reassign": "off",
     "react/require-default-props": "off",
     "react/jsx-props-no-spreading": "off",
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+      },
+    ],
   },
   "settings": {
     "import/resolver": {
