@@ -8,9 +8,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "*": ["node_modules/*"]
+      "@/*": ["*"] // '@/'를 src 내부를 기준으로 설정
     }
   },
   "include": ["src/**/*", "tailwind.config.js"],
