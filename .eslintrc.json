@@ -18,6 +18,16 @@
     "@typescript-eslint/quotes": ["error", "double"], // For TypeScript-specific files
     "prettier/prettier": ["error", { "singleQuote": false }], // Prettier integration
     "no-param-reassign": "off",
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off",
+    "import/no-unresolved": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "./tsconfig.json"
+      }
+    }
   }
+  
 }
