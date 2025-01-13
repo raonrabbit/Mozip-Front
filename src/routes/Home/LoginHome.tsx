@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FcGoogle } from "react-icons/fc";
 import { authActions } from "../../store/authSlice";
+import { Button } from "components/ui/button"; // shadcn 버튼 컴포넌트 경로
 
 export default function LoginHome() {
 	const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
@@ -62,9 +63,13 @@ export default function LoginHome() {
 								/>
 							</label>
 						</div>
-						<button type="submit" className="w-full bg-[#AB8ECD] text-white py-2 rounded-[0.75rem] font-semibold">
+						<Button
+							type="submit"
+							variant="default"
+							className="bg-[#AB8ECD] w-full rounded-[0.75rem] py-2 font-semibold"
+						>
 							로그인
-						</button>
+						</Button>
 					</form>
 
 					{/* 구글 로그인 */}
