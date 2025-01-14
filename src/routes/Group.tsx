@@ -9,9 +9,7 @@ export default function Group() {
 				<div className="flex w-full h-12 items-center justify-between p-6 border-b-2">
 					<div className="font-semibold text-gray-700 dark:text-slate-400">그룹</div>
 					<div className="flex gap-4">
-						<FaSearch className="text-gray-700 dark:text-slate-400" />
 						<MdGroupAdd className="text-gray-700 dark:text-slate-400" />
-						<FaPen className="text-gray-700 dark:text-slate-400" />
 					</div>
 				</div>
 			</div>
