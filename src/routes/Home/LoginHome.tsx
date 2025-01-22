@@ -1,34 +1,23 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { authActions } from "../../store/authSlice";
-import { Button } from "components/ui/button"; // shadcn 버튼 컴포넌트 경로
+import { Button } from "@/components/ui/button"; // shadcn 버튼 컴포넌트 경로
 
 export default function LoginHome() {
-	const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
-	const REDIRECT_URI = `${process.env.REACT_APP_ORIGIN_URI}/login/google`;
-
-	const navigate = useNavigate();
-	const dispatch = useDispatch();
-	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		dispatch(
-			authActions.login({
-				profileImg: null,
-				name: "홍길동",
-				email: "test@gmail.com",
-				role: "user",
-			}),
-		);
-		navigate("/home");
-	};
+	const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
+	const REDIRECT_URI = `${import.meta.env.VITE_ORIGIN_URI}/login/google`;
 
 	return (
 		<div className="flex items-center justify-center min-h-screen bg-background dark:bg-background-dark">
 			<div className="w-[1400px] h-[570px] bg-white rounded-[1.5rem] shadow-lg flex overflow-hidden">
 				{/* 왼쪽 영역: 동영상 */}
 				<div className="w-1/2 bg-purple-100 relative">
-					<video src="/videos/main.mp4" autoPlay loop muted className="w-full h-full object-cover" />
+					<video
+						src="/videos/main.mp4"
+						autoPlay
+						loop
+						muted
+						className="w-full h-full object-cover"
+					/>
 				</div>
 
 				{/* 오른쪽 영역: 로그인 폼 */}
@@ -40,7 +29,7 @@ export default function LoginHome() {
 					<div className="text-xl font-semibold mb-8">로그인</div>
 
 					{/* 이메일 / 비밀번호 폼 */}
-					<form className="space-y-4" onSubmit={handleSubmit}>
+					<form className="space-y-4">
 						<div>
 							<label htmlFor="email" className="block mb-1 text-sm font-medium">
 								이메일
@@ -53,7 +42,10 @@ export default function LoginHome() {
 							</label>
 						</div>
 						<div>
-							<label htmlFor="password" className="block mb-1 text-sm font-medium">
+							<label
+								htmlFor="password"
+								className="block mb-1 text-sm font-medium"
+							>
 								비밀번호
 								<input
 									type="password"
@@ -86,7 +78,10 @@ export default function LoginHome() {
 					{/* 회원가입 안내 */}
 					<div className="mt-4 text-sm text-right">
 						계정이 없으신가요?
-						<Link to="/signup" className="text-purple-500 underline decoration-purple-500">
+						<Link
+							to="/signup"
+							className="text-purple-500 underline decoration-purple-500"
+						>
 							회원가입하러 가기
 						</Link>
 					</div>

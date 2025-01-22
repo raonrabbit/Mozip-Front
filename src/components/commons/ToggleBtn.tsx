@@ -46,8 +46,17 @@ function Toggle({
 	const inputId = uuidv4();
 
 	return (
-		<label htmlFor={inputId} className={`relative inline-block ${sizeStyles[size]}`}>
-			<input id={inputId} type="checkbox" checked={isToggled} onChange={handleToggle} className="sr-only" />
+		<label
+			htmlFor={inputId}
+			className={`relative inline-block ${sizeStyles[size]}`}
+		>
+			<input
+				id={inputId}
+				type="checkbox"
+				checked={isToggled}
+				onChange={handleToggle}
+				className="sr-only"
+			/>
 			<div
 				className={`block w-full h-full rounded-full transition-colors duration-300 ${isToggled ? onColor : offColor} [box-shadow:inset_0_2px_2px_rgba(0,0,0,0.3)]`}
 			/>

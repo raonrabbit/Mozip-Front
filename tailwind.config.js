@@ -1,34 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-	darkMode: ["class"], // 다크 모드 설정
-	content: ["./src/**/*.{ts,tsx,js,jsx}"],
+	darkMode: ["class"],
+	content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
 	theme: {
 		extend: {
+			borderRadius: {
+				lg: "var(--radius)",
+				md: "calc(var(--radius) - 2px)",
+				sm: "calc(var(--radius) - 4px)",
+			},
 			colors: {
-				// 공통 색상 변수
-				border: "hsl(var(--border))",
-				input: "hsl(var(--input))",
-				ring: "hsl(var(--ring))",
-				background: {
-					DEFAULT: "hsl(var(--background))",
-					foreground: "hsl(var(--foreground))",
-					light: "#FAF7FC",
-					dark: "#1A202C",
-				},
+				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",
+				card: {
+					DEFAULT: "hsl(var(--card))",
+					foreground: "hsl(var(--card-foreground))",
+				},
+				popover: {
+					DEFAULT: "hsl(var(--popover))",
+					foreground: "hsl(var(--popover-foreground))",
+				},
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
 					foreground: "hsl(var(--primary-foreground))",
-					light: "#AB8ECD",
-					dark: "#6C578A",
 				},
 				secondary: {
 					DEFAULT: "hsl(var(--secondary))",
 					foreground: "hsl(var(--secondary-foreground))",
-				},
-				destructive: {
-					DEFAULT: "hsl(var(--destructive))",
-					foreground: "hsl(var(--destructive-foreground))",
 				},
 				muted: {
 					DEFAULT: "hsl(var(--muted))",
@@ -38,30 +36,44 @@ module.exports = {
 					DEFAULT: "hsl(var(--accent))",
 					foreground: "hsl(var(--accent-foreground))",
 				},
-				popover: {
-					DEFAULT: "hsl(var(--popover))",
-					foreground: "hsl(var(--popover-foreground))",
+				destructive: {
+					DEFAULT: "hsl(var(--destructive))",
+					foreground: "hsl(var(--destructive-foreground))",
 				},
-				card: {
-					DEFAULT: "hsl(var(--card))",
-					foreground: "hsl(var(--card-foreground))",
-				},
-				header: {
-					DEFAULT: "#FAF8FB",
-					dark: "#1A1C2C",
-				},
-				shadow: {
-					DEFAULT: "rgba(62, 48, 130, 0.15)",
+				border: "hsl(var(--border))",
+				input: "hsl(var(--input))",
+				ring: "hsl(var(--ring))",
+				chart: {
+					1: "hsl(var(--chart-1))",
+					2: "hsl(var(--chart-2))",
+					3: "hsl(var(--chart-3))",
+					4: "hsl(var(--chart-4))",
+					5: "hsl(var(--chart-5))",
 				},
 			},
-			borderRadius: {
-				lg: "var(--radius)",
-				md: "calc(var(--radius) - 2px)",
-				sm: "calc(var(--radius) - 4px)",
+			keyframes: {
+				"accordion-down": {
+					from: {
+						height: "0",
+					},
+					to: {
+						height: "var(--radix-accordion-content-height)",
+					},
+				},
+				"accordion-up": {
+					from: {
+						height: "var(--radix-accordion-content-height)",
+					},
+					to: {
+						height: "0",
+					},
+				},
+			},
+			animation: {
+				"accordion-down": "accordion-down 0.2s ease-out",
+				"accordion-up": "accordion-up 0.2s ease-out",
 			},
 		},
 	},
-	plugins: [
-		require("tailwindcss-animate"), // 애니메이션 플러그인
-	],
+	plugins: [require("tailwindcss-animate")],
 };

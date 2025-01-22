@@ -1,10 +1,15 @@
 import localAxios from "./http-commons";
-import { GoogleLoginResponse } from "../interfaces/user/googleLogin";
-import { ErrorResponse } from "../interfaces/commons/error";
+import { GoogleLoginResponse } from "../types/user/googleLogin";
+import { ErrorResponse } from "../types/commons/error";
 
-export const googleLoginAPI = async (code: string): Promise<GoogleLoginResponse> => {
+export const googleLoginAPI = async (
+	code: string,
+): Promise<GoogleLoginResponse> => {
 	try {
-		const response = await localAxios.post<GoogleLoginResponse>("auth/login/google", { code });
+		const response = await localAxios.post<GoogleLoginResponse>(
+			"auth/login/google",
+			{ code },
+		);
 		return response.data;
 	} catch (error: unknown) {
 		const err = error as ErrorResponse;

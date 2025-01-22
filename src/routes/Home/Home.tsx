@@ -6,7 +6,9 @@ import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 import { EventApi, EventInput, ViewApi } from "@fullcalendar/core"; // ViewApi 추가
 import koLocale from "@fullcalendar/core/locales/ko";
 
-const initialEvents: EventInput[] = [{ title: "초기 이벤트", start: new Date().toISOString().split("T")[0] }];
+const initialEvents: EventInput[] = [
+	{ title: "초기 이벤트", start: new Date().toISOString().split("T")[0] },
+];
 
 export default function Home() {
 	// Draggable 생성 함수
@@ -46,10 +48,18 @@ export default function Home() {
 			{/* External Events */}
 			<div id="external-events" className="w-1/4 p-4 border rounded">
 				<h2 className="text-lg font-bold mb-4">드래그 이벤트</h2>
-				<div className="fc-event bg-blue-500 text-white px-2 py-1 rounded mb-2 cursor-pointer">미팅</div>
-				<div className="fc-event bg-green-500 text-white px-2 py-1 rounded mb-2 cursor-pointer">워크샵</div>
-				<div className="fc-event bg-red-500 text-white px-2 py-1 rounded mb-2 cursor-pointer">컨퍼런스</div>
-				<p className="text-gray-500 text-sm mt-4">Drag and drop these events onto the calendar.</p>
+				<div className="fc-event bg-blue-500 text-white px-2 py-1 rounded mb-2 cursor-pointer">
+					미팅
+				</div>
+				<div className="fc-event bg-green-500 text-white px-2 py-1 rounded mb-2 cursor-pointer">
+					워크샵
+				</div>
+				<div className="fc-event bg-red-500 text-white px-2 py-1 rounded mb-2 cursor-pointer">
+					컨퍼런스
+				</div>
+				<p className="text-gray-500 text-sm mt-4">
+					Drag and drop these events onto the calendar.
+				</p>
 			</div>
 
 			{/* FullCalendar */}

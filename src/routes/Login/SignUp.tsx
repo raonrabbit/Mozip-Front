@@ -6,7 +6,13 @@ export default function SignUp() {
 			<div className="w-[1400px] h-[670px] bg-white rounded-[1.5rem] shadow-lg flex overflow-hidden">
 				{/* 왼쪽 영역: 동영상 */}
 				<div className="w-1/2 bg-purple-100 relative">
-					<video src="/videos/main.mp4" autoPlay loop muted className="w-full h-full object-cover" />
+					<video
+						src="/videos/main.mp4"
+						autoPlay
+						loop
+						muted
+						className="w-full h-full object-cover"
+					/>
 				</div>
 
 				{/* 오른쪽 영역: 회원가입 폼 */}
@@ -42,7 +48,10 @@ export default function SignUp() {
 							</label>
 						</div>
 						<div>
-							<label htmlFor="password" className="block mb-1 text-sm font-medium">
+							<label
+								htmlFor="password"
+								className="block mb-1 text-sm font-medium"
+							>
 								비밀번호
 								<input
 									type="password"
@@ -53,7 +62,10 @@ export default function SignUp() {
 							</label>
 						</div>
 						<div>
-							<label htmlFor="confirmPassword" className="block mb-1 text-sm font-medium">
+							<label
+								htmlFor="confirmPassword"
+								className="block mb-1 text-sm font-medium"
+							>
 								비밀번호 확인
 								<input
 									type="password"
@@ -63,7 +75,10 @@ export default function SignUp() {
 								/>
 							</label>
 						</div>
-						<button type="submit" className="w-full bg-[#AB8ECD] text-white py-2 rounded-[0.75rem] font-semibold">
+						<button
+							type="submit"
+							className="w-full bg-[#AB8ECD] text-white py-2 rounded-[0.75rem] font-semibold"
+						>
 							회원가입
 						</button>
 					</form>
@@ -71,7 +86,10 @@ export default function SignUp() {
 					{/* 로그인 안내 */}
 					<div className="mt-4 text-sm text-right">
 						이미 계정이 있으신가요?
-						<Link to="/" className="text-purple-500 underline decoration-purple-500">
+						<Link
+							to="/"
+							className="text-purple-500 underline decoration-purple-500"
+						>
 							로그인하러 가기
 						</Link>
 					</div>

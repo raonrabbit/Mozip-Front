@@ -5,6 +5,6 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
-export function isDev() {
-	return process.env.NODE_ENV === "development";
+export function isMobile() {
+	return window.innerWidth <= 768;
 }
