@@ -1,18 +1,17 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "esnext",
-    "jsx": "react-jsx",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "baseUrl": "src",
-    "paths": {
-      "@/*": ["*"] // '@/'를 src 내부를 기준으로 설정
-    }
-  },
-  "include": ["src/**/*", "tailwind.config.js"],
-  "exclude": ["node_modules"]
+	"files": [],
+	"references": [
+		{
+			"path": "./tsconfig.app.json"
+		},
+		{
+			"path": "./tsconfig.node.json"
+		}
+	],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	}
 }

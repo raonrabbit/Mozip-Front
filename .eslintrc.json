@@ -1,43 +1,40 @@
 {
-  "extends": [
-    "airbnb",
-    "airbnb/hooks",
-    "airbnb-typescript",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
-  "plugins": ["@typescript-eslint", "prettier"],
-  "rules": {
-    "react/react-in-jsx-scope": "off",
-    "import/no-extraneous-dependencies": "off",
-    "quotes": ["error", "double"], // Enforce double quotes
-    "@typescript-eslint/quotes": ["error", "double"], // For TypeScript-specific files
-    "prettier/prettier": ["error", { "singleQuote": false }], // Prettier integration
-    "no-param-reassign": "off",
-    "react/require-default-props": "off",
-    "react/jsx-props-no-spreading": "off",
-    "import/no-unresolved": "off",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
-      {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never",
-      },
-    ],
-  },
-  "settings": {
-    "import/resolver": {
-      "typescript": {
-        "project": "./tsconfig.json"
-      }
-    }
-  }
-  
+	"extends": [
+		"airbnb",
+		"airbnb/hooks",
+		"airbnb-typescript",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended"
+	],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": "./tsconfig.eslint.json"
+	},
+	"plugins": ["@typescript-eslint", "prettier"],
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"import/no-extraneous-dependencies": "off",
+		"quotes": ["error", "double"],
+		"@typescript-eslint/quotes": ["error", "double"],
+		"prettier/prettier": ["error", { "singleQuote": false }],
+		"no-param-reassign": "off",
+		"react/require-default-props": "off",
+		"react/jsx-props-no-spreading": "off",
+		"import/no-unresolved": "off"
+	},
+	"settings": {
+		"import/resolver": {
+			"typescript": {
+				"alwaysTryTypes": true, // @types 패키지를 포함한 TypeScript 모듈도 확인
+				"project": "./tsconfig.json"
+			}
+		}
+	},
+	"ignorePatterns": [
+		"node_modules/",
+		"dist/",
+		"vite.config.ts",
+		"postcss.config.js",
+		"tailwind.config.js"
+	]
 }

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { googleLoginAPI } from "../../api/auth";
-import { GoogleLoginResponse } from "../../interfaces/user/googleLogin";
+import { GoogleLoginResponse } from "../../types/user/googleLogin";
 
 export default function GoogleCallback() {
 	const navigate = useNavigate();
